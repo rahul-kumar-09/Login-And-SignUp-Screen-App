@@ -32,6 +32,34 @@ class SignupActivity : AppCompatActivity() {
         binding.btnRegister.setOnClickListener {
             val email = binding.tvEmail.text.toString().trim()
             val pass = binding.tvPassword.text.toString().trim()
+            val address = binding.tvAddress.text.toString().trim()
+            val name = binding.tvName.text.toString().trim()
+            val conPass = binding.tvConfirmPassword.text.toString().trim()
+
+
+            if (name.isEmpty()){
+                binding.tvName.setError("Please fill the Name")
+            }
+
+            if (email.isEmpty()){
+                binding.tvEmail.setError("Please fill the Email")
+            }
+
+            if (address.isEmpty()){
+                binding.tvAddress.setError("Please fill the Address")
+            }
+
+            if (pass.isEmpty()){
+                binding.tvPassword.setError("Please set a Password")
+            }
+            if (conPass.isEmpty()){
+                binding.tvConfirmPassword.setError("Please fill the Password")
+            }
+
+            if (pass != conPass){
+                binding.tvConfirmPassword.setError("Password not match ")
+            }
+
 
             if (email.isNotEmpty() && pass.isNotEmpty()){
                 auth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(this) {task->

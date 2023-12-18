@@ -63,6 +63,17 @@
         android:hint="Password"
         android:inputType="textPassword" />
 
+    <EditText
+        android:id="@+id/tvConfirmPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:ems="10"
+        android:padding="10dp"
+        android:textSize="22sp"
+        android:hint="Confirm Password"
+        android:inputType="textPassword" />
+
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
@@ -70,7 +81,7 @@
         android:layout_marginHorizontal="20dp"
         android:padding="10dp"
         android:textSize="22sp"
-        android:text="REGISTER" />
+        android:text="Sign Up" />
 
 
     <Button
@@ -80,7 +91,7 @@
         android:layout_marginHorizontal="20dp"
         android:padding="10dp"
         android:textSize="22sp"
-        android:text="LOGIN" />
+        android:text="Login" />
 
 
 </LinearLayout>

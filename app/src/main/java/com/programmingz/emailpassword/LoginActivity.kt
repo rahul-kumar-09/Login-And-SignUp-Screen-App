@@ -29,6 +29,12 @@ class LoginActivity : AppCompatActivity() {
         binding.login.setOnClickListener {
             val email = binding.etEmail.text.toString().trim()
             val pass = binding.etPassword.text.toString().trim()
+            if (email.isEmpty()){
+                binding.etEmail.setError("Please fill the Email")
+            }
+            if (pass.isEmpty()){
+                binding.etPassword.setError("Please fill the Password")
+            }
 
             if (email.isNotEmpty() && pass.isNotEmpty()){
 
