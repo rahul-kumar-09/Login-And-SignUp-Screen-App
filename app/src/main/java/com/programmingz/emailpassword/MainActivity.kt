@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -22,11 +23,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setLogOutBtn()
+        setInProgress(true)
+
+
+
+
+    }
+
+    private fun setLogOutBtn() {
         database = Firebase.database.reference
 
         val userId = FirebaseAuth.getInstance().currentUser!!.uid
 
         database.child("User").child(userId).get().addOnSuccessListener {
+            setInProgress(false)
             val name = it.child("name").value.toString()
             val email = it.child("email").value.toString()
             val address = it.child("address").value.toString()
@@ -44,11 +55,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginActivity::class.java))
             finishAffinity()
         }
-
-
-
-
-
-
     }
+
+
+    private fun setInProgress(inProgress: Boolean){
+        if (inProgress){
+            binding.progressBar.visibility = View.VISIBLE
+            binding.btnLogOut.visibility = View.GONE
+        } else {
+            binding.progressBar.visibility = View.GONE
+            binding.btnLogOut.visibility = View.VISIBLE
+        }
+    }
+
 }

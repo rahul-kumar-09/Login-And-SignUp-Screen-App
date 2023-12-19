@@ -4,75 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".SignupActivity">
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="55dp"
         android:text="SIGN UP"
-        android:layout_gravity="center"
         android:textColor="#2196F3"
         android:textSize="33sp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/tvName"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:ems="10"
-        android:padding="10dp"
-        android:textSize="22sp"
-        android:inputType="text"
-        android:hint="Name"/>
+        android:layout_marginHorizontal="15dp"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/tvAddress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:ems="10"
-        android:hint="Address"
-        android:padding="10dp"
-        android:textSize="22sp"
-        android:inputType="text" />
 
-    <EditText
-        android:id="@+id/tvEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:ems="10"
-        android:padding="10dp"
-        android:textSize="22sp"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:startIconDrawable="@drawable/baseline_face_6_24"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            android:layout_marginBottom="5dp">
 
-    <EditText
-        android:id="@+id/tvPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:ems="10"
-        android:padding="10dp"
-        android:textSize="22sp"
-        android:hint="Password"
-        android:inputType="textPassword" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/tvConfirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:ems="10"
-        android:padding="10dp"
-        android:textSize="22sp"
-        android:hint="Confirm Password"
-        android:inputType="textPassword" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:startIconDrawable="@drawable/baseline_email_24"
+            android:layout_marginBottom="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:startIconDrawable="@drawable/baseline_add_location_24"
+            android:layout_marginBottom="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:startIconDrawable="@drawable/ic_password"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            android:layout_marginBottom="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:startIconDrawable="@drawable/ic_password"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            android:layout_marginBottom="5dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tvConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Confirm Password" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+
 
     <Button
         android:id="@+id/btnRegister"
@@ -80,9 +106,8 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:padding="10dp"
-        android:textSize="22sp"
-        android:text="Sign Up" />
-
+        android:text="Sign Up"
+        android:textSize="22sp" />
 
     <Button
         android:id="@+id/btnLoginButton"
@@ -90,8 +115,8 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:padding="10dp"
-        android:textSize="22sp"
-        android:text="Login" />
+        android:text="Login"
+        android:textSize="22sp" />
 
 
 </LinearLayout>
